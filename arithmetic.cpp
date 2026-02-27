@@ -146,18 +146,18 @@ bool applyOperator(stack<double>& st, const string& op) {
     }
 
     else if (op == "a") {     // average (mean) operator
-        if (st.empty()) return false;
+    	if (st.empty()) return false;
 
-        double sum{};
-        int count{};
+    	double s = 0.0;
+    	int c = 0;
 
-        while (!st.empty()) {
-            sum += st.top();
-            st.pop();
-            count++;
-        }
+    	while (!st.empty()) {
+    		s += st.top();
+    		st.pop(); c++;
+    	}
 
-        st.push(sum / count);
+    	double avg = s/c;
+    	st.push(avg);
     }
 
     else if (op == "abs") {     // absolute value operator
